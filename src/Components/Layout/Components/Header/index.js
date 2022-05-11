@@ -9,6 +9,7 @@ import styles from './Header.module.scss';
 import images from '~/assets/images';
 import { Wrapper as PopoverWrapper } from '~/Components/Popover';
 import AccountItem from '~/Components/AccountItem';
+import Button from '~/Components/Button';
 
 const cx = classNames.bind(styles);
 
@@ -21,9 +22,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
-                    <img src={images.logo} alt="TikTok" />
-                </div>
+                <img src={images.logo} alt="TikTok" />
 
                 <Tippy
                     interactive
@@ -52,7 +51,10 @@ function Header() {
                     </div>
                 </Tippy>
 
-                <div className={cx('actions')}></div>
+                <div className={cx('actions')}>
+                    <Button text>Upload</Button>
+                    <Button primary>Log in</Button>
+                </div>
             </div>
         </header>
     );
