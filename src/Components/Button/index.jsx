@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
-import styles from './Button.module.scss';
 import { Link } from 'react-router-dom';
+import styles from './Button.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -15,8 +15,8 @@ function Button({
     small = false,
     large = false,
     children,
-    iconLeft = false,
-    iconRight = false,
+    leftIcon = false,
+    rightIcon = false,
     className,
     onClick,
     ...passProps
@@ -58,9 +58,9 @@ function Button({
 
     return (
         <Comp className={classes} {...props}>
-            {iconLeft && <span className={cx('icon')}>{iconLeft}</span>}
+            {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
             <span className={cx('title')}>{children}</span>
-            {iconRight && <span className={cx('icon')}>{iconRight}</span>}
+            {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
         </Comp>
     );
 }
