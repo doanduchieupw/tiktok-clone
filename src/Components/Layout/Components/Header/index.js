@@ -3,18 +3,16 @@ import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCircleXmark,
-    faCloudArrowUp,
     faCoins,
     faEllipsisVertical,
     faGear,
     faKeyboard,
     faLanguage,
-    faMagnifyingGlass,
     faQuestion,
     faSignOut,
     faSpinner,
 } from '@fortawesome/free-solid-svg-icons';
-import { faEnvelope, faPaperPlane, faUser } from '@fortawesome/free-regular-svg-icons';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
 import Tippy from '@tippyjs/react';
 import HeadlessTippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
@@ -24,6 +22,7 @@ import { Wrapper as PopoverWrapper, Menu } from '~/Components/Popover';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AccountItem from '~/Components/AccountItem';
+import { InboxIcon, MessageIcon, SearchIcon, UploadIcon } from '~/Components/Icons';
 
 const cx = classNames.bind(styles);
 
@@ -122,7 +121,8 @@ function Header() {
                         </button>
                         <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
                         <button className={cx('search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            {/* <FontAwesomeIcon icon={faMagnifyingGlass} /> */}
+                            <SearchIcon />
                         </button>
                     </div>
                 </HeadlessTippy>
@@ -131,19 +131,19 @@ function Header() {
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
-                            <Tippy delay={[0, 100]} content="Upload video" placement="bottom">
+                            <Tippy delay={[0, 50]} content="Upload video" placement="bottom">
                                 <button className={cx('actions-btn')}>
-                                    <FontAwesomeIcon icon={faCloudArrowUp} />
+                                    <UploadIcon />
                                 </button>
                             </Tippy>
-                            <Tippy delay={[0, 100]} content="Message" placement="bottom">
+                            <Tippy delay={[0, 50]} content="Message" placement="bottom">
                                 <button className={cx('actions-btn')}>
-                                    <FontAwesomeIcon icon={faPaperPlane} />
+                                    <MessageIcon />
                                 </button>
                             </Tippy>
-                            <Tippy delay={[0, 100]} content="Inbox" placement="bottom">
+                            <Tippy delay={[0, 50]} content="Inbox" placement="bottom">
                                 <button className={cx('actions-btn')}>
-                                    <FontAwesomeIcon icon={faEnvelope} />
+                                    <InboxIcon />
                                 </button>
                             </Tippy>
                         </>
