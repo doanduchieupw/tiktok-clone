@@ -11,7 +11,7 @@ function AccountItem() {
         <div className={cx('wrapper')}>
             <img
                 className={cx('avatar')}
-                src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/921f676f960b3c2844593adaa03c5726~c5_300x300.webp?x-expires=1652410800&x-signature=A2Ma%2BghxyYPQ90JFH42%2BC1K7puA%3D"
+                src="https://p9-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/7047869892715872257.jpeg?x-expires=1652756400&x-signature=fXcr6xzZvMxblu1f1LEKU927EIM%3D"
                 alt="Avatar"
             />
 
