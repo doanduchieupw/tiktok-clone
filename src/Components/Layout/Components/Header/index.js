@@ -23,6 +23,7 @@ import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AccountItem from '~/Components/AccountItem';
 import { InboxIcon, MessageIcon, SearchIcon, UploadIcon } from '~/Components/Icons';
+import Image from '~/Components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -144,6 +145,7 @@ function Header() {
                             <Tippy delay={[0, 50]} content="Inbox" placement="bottom">
                                 <button className={cx('actions-btn')}>
                                     <InboxIcon />
+                                    <span className={cx('badge')}>12</span>
                                 </button>
                             </Tippy>
                         </>
@@ -155,10 +157,11 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/ea0854578085ab26effc2c7b8cefa270~c5_100x100.jpeg?x-expires=1652760000&x-signature=Gw4YTJbSkUv3Xo5h2pWpNzFNnSs%3D"
                                 alt="Doan Duc Hieu"
+                                fallback="https://png2png.com/wp-content/uploads/2021/08/Tiktok-logo-png7.png"
                             />
                         ) : (
                             <button className={cx('more-btn')}>
